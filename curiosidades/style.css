@@ -1,0 +1,492 @@
+/* ==================== ESTILOS GERAIS ==================== */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e0f7e9, #d0e7f7);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* HEADER FIXO */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #f7f7f7;
+    border-bottom: 3px solid #004d40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #004d40;
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: bold;
+    font-size: 3em;
+    margin: 0 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões Gerais */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#menuBtn {
+    background-color: #00796b;
+    color: white;
+}
+
+/* Pesquisa */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #0288d1;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 150px;
+}
+
+#botaoPesquisa {
+    background-color: #0288d1;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    margin-left: -5px;
+}
+
+#menu {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #b2dfdb;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 60;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#menu a {
+    display: block;
+    text-decoration: none;
+    color: #004d40;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+#menu a:hover {
+    background-color: #80cbc4;
+}
+
+/* ---------------------------------- */
+/* Área de Conteúdo Principal (SPA)   */
+/* ---------------------------------- */
+#main-content {
+    padding: 30px 20px;
+    min-height: 70vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.curiosity-section h3 {
+    color: #004d40;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #0288d1;
+    padding-bottom: 10px;
+}
+
+/* Estilo do Item de Curiosidade */
+.curiosity-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #e0f7e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.curiosity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.curiosity-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.curiosity-text-container {
+    text-align: left;
+}
+
+.curiosity-text-container h4 {
+    color: #0288d1;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.curiosity-text-container p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo da Página Inicial (Home) */
+#home-page {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#home-page h1 {
+    color: #004d40;
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+#home-page p {
+    font-size: 1.5em;
+    color: #004d40;
+    max-width: 800px;
+    margin: 20px auto 40px;
+}
+
+/* Nova Imagem Chamativa */
+#home-page-image {
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+}
+
+/* ==================== ESTILOS DO FORMULÁRIO DE SUGESTÕES ==================== */
+#suggestion-form-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+#suggestion-form-page h3 {
+    color: #004d40;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #0288d1;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #00796b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: #004d40;
+}
+
+/* Mensagem de Feedback (Exemplo) */
+#feedbackMessage {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none;
+}
+
+
+/* ==================== MODAL (Visualização Detalhada) ==================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    /* Adicionado para celular */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+    /* Espaço para o header fixo */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: #004d40;
+    border-bottom: 2px solid #0288d1;
+    padding-bottom: 10px;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVO)    */
+/* ======================================= */
+
+/* Telas Pequenas e Médias (Até 768px - Celulares e Tablets) */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    #searchInput {
+        width: 100%;
+        /* Ocupa toda a largura do container */
+        border-radius: 5px 0 0 5px;
+    }
+
+    /* Ajusta a posição do menu dropdown no celular */
+    #menu {
+        top: auto;
+        /* Remove o topo fixo */
+        left: 50%;
+        /* Centraliza */
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+    #menuBtn {
+        margin: 0;
+    }
+
+    /* CONTEÚDO PRINCIPAL E CURIOUSITY ITEMS */
+    #main-content {
+        padding: 20px 10px;
+    }
+
+    /* Item de Curiosidade (Muda para coluna) */
+    .curiosity-item {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .curiosity-item img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .curiosity-text-container {
+        width: 100%;
+    }
+
+    .curiosity-text-container h4 {
+        font-size: 1.3em;
+    }
+
+    /* HOME PAGE */
+    #home-page h1 {
+        font-size: 3em;
+    }
+
+    #home-page p {
+        font-size: 1.2em;
+    }
+
+    #home-page-image {
+        width: 95%;
+    }
+
+    /* FORMULÁRIO DE SUGESTÃO */
+    #suggestion-form-page {
+        padding: 20px;
+    }
+
+    /* MODAL */
+    .modal {
+        padding-top: 20px;
+        /* Menos espaço no topo */
+        align-items: flex-start;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 0 auto;
+        padding: 15px;
+        /* Limita a altura para que caiba na tela e o conteúdo interno role */
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .modal-content p {
+        font-size: 1em;
+    }
+}
+
+.fixed-return-btn {
+    position: fixed;
+    bottom: 20px;
+    /* 20px do rodapé */
+    right: 20px;
+    /* 20px da direita */
+    z-index: 90;
+    /* Abaixo dos botões do header, mas acima do conteúdo */
+
+    /* Estilo do botão */
+    background-color: #541385;
+    opacity: 0.5;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    /* Formato pill */
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.fixed-return-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    opacity: 0.9;
+}
+
+/* Responsividade: Ajuste a posição para telas menores */
+@media (max-width: 768px) {
+    .fixed-return-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-return-btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}

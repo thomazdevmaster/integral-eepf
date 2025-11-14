@@ -1,0 +1,511 @@
+/* Variáveis de tema */
+:root {
+  --cor-fundo: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  --cor-card: rgba(255, 255, 255, 0.1);
+  --cor-hover: rgba(255, 255, 255, 0.3);
+  --cor-texto: #fff;
+  --cor-destaque: #5aacfe; /* Cor azul/clara */
+  --cor-botao-texto: #333;
+  --img-filtro: invert(50%) brightness(134%);
+}
+
+body.light {
+  --cor-fundo: linear-gradient(135deg, #bfe1fd, #a4b9ee);
+  --cor-card: rgba(255, 255, 255, 0.9);
+  --cor-hover: #fff3;
+  --cor-texto: #333;
+  --cor-destaque: #1b4269; /* Cor azul/escura */
+  --cor-botao-texto: #fff;
+  --img-filtro: invert(0%) brightness(100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+  padding-bottom: 80px;
+}
+
+/* HEADER: Ícones - Título */
+header {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Contêiner para os ícones (esquerda) */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+  height: 90px;
+  transition: transform 0.4s ease, filter 0.5s ease;
+}
+
+.brasao {
+  filter: var(--img-filtro);
+}
+
+header img:hover {
+  transform: scale(1.1);
+}
+
+.header-title {
+  text-align: center;
+  flex: 1; 
+  color: var(--cor-texto);
+  margin: 0 20px;
+}
+
+.header-title h2 {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.header-title h1 {
+  font-size: 1.8rem;
+  color: var(--cor-destaque);
+  background: linear-gradient(90deg, var(--cor-destaque), #a1bcff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brilho 3s infinite linear;
+}
+
+@keyframes brilho {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* NOVO: Estilo para a mensagem de Boas-Vindas */
+.boas-vindas {
+    max-width: 900px;
+    padding: 20px 30px; /* Mais padding */
+    margin: 20px auto 40px; /* Centraliza e aumenta margem inferior */
+    text-align: left; /* Alinhamento à esquerda para melhor leitura */
+    font-size: 1.2rem; /* Mais destaque */
+    line-height: 1.7; /* Melhor espaçamento entre linhas */
+    font-weight: 500;
+    background: var(--cor-card); /* Fundo sutil */
+    border-radius: 10px; /* Bordas suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    border-top: 5px solid var(--cor-destaque); /* Linha de destaque superior */
+    margin-bottom: 25px; /* Mais espaço entre parágrafos */
+    transition: background 0.3s ease;
+}
+
+/* ===== AGRUPAMENTO E POSICIONAMENTO FIXO DOS BOTÕES ===== */
+
+/* Botões de Sobre e Tema ficam fixos no canto superior direito */
+.fixed-buttons {
+    position: fixed;
+    top: 20px; /* Alterado de bottom para top */
+    right: 20px;
+    z-index: 100; 
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: flex-end; 
+}
+
+/* Botão de Info/Sobre */
+.btn-info {
+    background: var(--cor-destaque); 
+    color: var(--cor-botao-texto); 
+    border: none;
+    padding: 10px 18px; 
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-info:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* BOTÃO DE TEMA FIXO */
+.toggle-theme {
+    background: var(--cor-destaque);
+    color: var(--cor-botao-texto);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.toggle-theme:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ===== CARROSSEL 3D ===== */
+.carousel {
+    perspective: 2000px;
+    width: 100%;
+    max-width: 900px;
+    height: 420px;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transition: transform 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+  position: absolute;
+  width: 280px;
+  height: 380px;
+  background: var(--cor-card);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  transform-origin: center center;
+  transition: all 0.8s ease;
+  opacity: 0.4;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: var(--cor-destaque);
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin: 8px 0 15px;
+}
+
+.card a {
+  display: inline-block;
+  background: var(--cor-destaque);
+  color: var(--cor-botao-texto);
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.card a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.card.active {
+  transform: scale(1.2) translateZ(100px);
+  opacity: 1;
+  background: var(--cor-hover);
+  z-index: 10;
+}
+
+/* Botões de Navegação */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  background: var(--cor-destaque);
+  color: var(--cor-botao-texto);
+  border: none;
+  font-size: 1.8rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* POSIÇÃO PADRÃO (DESKTOP) */
+.prev { left: -200px; }
+.next { right: -200px; }
+
+/* Informação do Grupo Ativo (abaixo do carrossel) */
+.grupo-info {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background: rgba(255,255,255,0.1);
+  padding: 15px 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  backdrop-filter: blur(4px);
+  min-height: 50px; /* Garante que ocupe espaço mesmo que o texto demore a carregar */
+}
+
+/* NOVO: Texto de Explicação do Projeto */
+.explicacao-projeto {
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 50px auto 50px; /* Centraliza */
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.explicacao-projeto p {
+    margin-bottom: 25px; /* Mais espaço entre parágrafos */
+    padding: 20px; /* Mais padding interno */
+    border-left: 6px solid var(--cor-destaque); /* Linha mais grossa e profissional */
+    background: var(--cor-hover); /* Fundo um pouco mais claro para destaque */
+    border-radius: 5px; /* Bordas suaves */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para os blocos */
+    transition: background 0.3s ease;
+}
+
+/* NOVO ESTILO: Destaque para termos importantes no texto */
+.explicacao-projeto p strong {
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    opacity: 0.8;
+    background: rgba(44, 44, 84, 0.477);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer .desc {
+    padding: 5px 20px;
+}
+
+footer p {
+    margin: 3px 0;
+    font-size: 0.8rem;
+}
+
+
+/* ===== MODAL DE SOBRE GERAL (Responsivo) ===== */
+.modal-bg {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--cor-card);
+    color: var(--cor-texto);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh; 
+    overflow-y: auto; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: slideDown 0.4s ease-out;
+    margin: 20px auto; 
+}
+
+.modal-content h3 {
+    color: var(--cor-destaque);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    color: var(--cor-destaque);
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    transition: color 0.3s;
+    position: sticky; 
+    top: 0;
+    background: var(--cor-card); 
+    padding-left: 10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo da imagem do modal (Corrigido para ser responsivo) */
+.modal-img {
+    width: 100%;
+    height: auto; 
+    max-height: 500px; 
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content p {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+    
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVO)              */
+/* ======================================= */
+
+/* Para tablets e telas menores (até 768px) */
+@media (max-width: 768px) {
+    
+    /* HEADER */
+    header {
+        flex-direction: column; 
+        padding: 20px 10px;
+        align-items: center; 
+        gap: 15px;
+    }
+
+    .header-icons { order: 1; }
+    .header-title { order: 2; margin: 0; }
+    
+    header img { height: 60px; }
+    .header-title h1 { font-size: 1.5rem; }
+    .boas-vindas { font-size: 1rem; }
+
+    /* CARROSSEL */
+    .carousel {
+        margin-top: 40px;
+        height: 350px; 
+    }
+    
+    .card {
+        width: 240px; 
+        height: 320px;
+        padding: 15px;
+    }
+    
+    .card img { height: 150px; }
+    
+    /* Botões de navegação no tablet */
+    .prev { left: -100px; } 
+    .next { right: -100px; }
+    
+    /* MODAL */
+    .modal-content {
+        max-height: 95vh; 
+    }
+}
+
+/* Para celulares (até 480px) */
+@media (max-width: 480px) {
+    
+    header img { height: 45px; }
+    .header-title h1 { font-size: 1.2rem; }
+    .header-title h2 { font-size: 0.8rem; }
+    
+    /* Ajuste para botões fixos no celular (não podem ficar em cima do título) */
+    .fixed-buttons {
+        position: relative; /* Remove a fixação para o celular */
+        top: auto; 
+        right: auto;
+        flex-direction: row; 
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+        order: 3; /* Coloca os botões abaixo do título no header */
+    }
+    
+    /* CARROSSEL */
+    .carousel { height: 300px; }
+    .card { width: 200px; height: 280px; }
+    .card img { height: 120px; }
+    
+    /* Posicionamento dos botões do carrossel no mobile (corrigido) */
+    .prev { 
+        left: 10px; 
+        transform: translateY(-50%); 
+    } 
+    .next { 
+        right: 10px; 
+        transform: translateY(-50%); 
+    }
+    
+    .carousel-btn {
+        padding: 8px 12px;
+        font-size: 1.4rem;
+    }
+    
+    /* MODAL */
+    .modal-content {
+        padding: 20px;
+        margin: 10px;
+        max-height: 95vh; 
+    }
+    .modal-content h3 {
+        font-size: 1.5rem;
+    }
+    .modal-img {
+        max-height: 150px; 
+    }
+}

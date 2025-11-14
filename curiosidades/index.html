@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Você Sabia? - Conteúdo Dinâmico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <button id="menuBtn">☰ Menu</button>
+        <div id="menu">
+            <a onclick="loadPage('home')">Início</a><br>
+            <a onclick="loadPage('novidades')">Novidades</a><br>
+            <a onclick="loadPage('humanas')">Ciências Humanas</a><br>
+            <a onclick="loadPage('natureza')">Ciências da Natureza</a><br>
+            <a onclick="loadPage('cultura')">Cultura</a><br>
+            <hr style="border-top: 1px solid #004d40; margin: 5px 0;">
+            <a onclick="loadPage('sugestoes')">✉️ Sugerir Curiosidade</a>
+        </div>
+
+        <h1>Você sabia?</h1>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar curiosidades...">
+            <button id="botaoPesquisa" onclick="Pesquisar()">
+                <span class="icon">&#128269;</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="main-content">
+    </div>
+
+    <div id="curiosityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+            </div>
+        </div>
+    </div>
+    <a href="../" class="fixed-return-btn">
+      🏠 Voltar à Home
+    </a>
+    <script src="script.js"></script>
+</body>
+
+</html>

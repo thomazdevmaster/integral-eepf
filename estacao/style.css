@@ -1,0 +1,165 @@
+    body {
+        font-family: 'Georgia';
+        /* As imagens de fundo das estações já são responsivas devido ao background-size: cover; */
+        background: url(https://static.techno-science.net/illustration/Libre/2024/07/09/rmaOwpMSZ2Pmb3nZME0yw.jpg) no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        transition: background 1s ease, color 1s ease;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 80px auto;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        /* Adicionado para garantir que padding e border sejam incluídos no width */
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 5px 0;
+    }
+
+    input[type="date"] {
+        padding: 10px;
+        border: 2px solid #2196F3;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: border-color 0.3s;
+        /* Define a largura do input para ser flexível em telas grandes */
+        width: 80%;
+        max-width: 300px;
+        box-sizing: border-box;
+    }
+
+    input[type="date"]:hover {
+        border-color: #1976D2;
+    }
+
+    #icone {
+        font-size: 80px;
+        margin-top: 10px;
+    }
+
+    /* Classes de fundo (cada estação tem uma imagem diferente) */
+    .verao {
+        background: url(https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/12/solsticio-verao-equinocio-praia-sol.jpg?w=1200&h=900&crop=1) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .outono {
+        background: url(https://www.ee.usp.br/proesa/wp-content/uploads/2019/11/outono4.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .inverno {
+        background: url(https://cavappcontent.s3.amazonaws.com/01-inverno-no-brasil-clima-ao-vivo-03-07-25-1751567299610.webp) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .primavera {
+        background: url(https://www.melhoresdestinos.com.br/wp-content/uploads/2024/03/primavera-hemisferio-norte-europa-capa.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* ======================================= */
+    /* MEDIA QUERIES (RESPONSIVO)    */
+    /* ======================================= */
+
+    /* Telas Pequenas (Celulares, até 600px) */
+    @media (max-width: 600px) {
+        .container {
+            /* Ocupa a maior parte da largura da tela */
+            width: 90%;
+            max-width: none;
+            /* Remove a limitação de 500px */
+            /* Reduz a margem vertical para usar melhor o espaço */
+            margin: 20px auto;
+            padding: 20px 15px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            /* Título principal menor */
+        }
+
+        h2 {
+            font-size: 1.4em;
+            /* Subtítulo menor */
+        }
+
+        input[type="date"] {
+            width: 100%;
+            /* Input ocupa toda a largura do container */
+            max-width: none;
+        }
+
+        #icone {
+            font-size: 60px;
+            /* Ícone menor */
+        }
+
+        .resultado p {
+            font-size: 16px;
+            /* Garante que o texto de descrição fique confortável */
+        }
+    }
+
+    .fixed-return-btn {
+        position: fixed;
+        bottom: 20px;
+        /* 20px do rodapé */
+        right: 20px;
+        /* 20px da direita */
+        z-index: 90;
+        /* Abaixo dos botões do header, mas acima do conteúdo */
+
+        /* Estilo do botão */
+        background-color: #541385;
+        opacity: 0.5;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        /* Formato pill */
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .fixed-return-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        opacity: 0.9;
+    }
+
+    /* Responsividade: Ajuste a posição para telas menores */
+    @media (max-width: 768px) {
+        .fixed-return-btn {
+            bottom: 15px;
+            right: 15px;
+            padding: 10px 18px;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .fixed-return-btn {
+            bottom: 10px;
+            right: 10px;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+        }
+    }

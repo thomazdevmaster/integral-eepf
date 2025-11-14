@@ -1,0 +1,394 @@
+/* Fonte divertida */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+
+/* Corpo da página */
+body {
+    font-family: 'Baloo 2', cursive;
+    background: linear-gradient(135deg, #007bff, #1a99e9, #ffeb3b);
+    background-size: 400% 400%;
+    animation: fundoAnimado 10s ease infinite;
+    margin: 0;
+    color: #043927;
+    text-align: center;
+}
+
+@keyframes fundoAnimado {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* HEADER */
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header span {
+    color: #00ffff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+#hero {
+    background-image: url("https://mercadoeconsumo.com.br/wp-content/uploads/2023/02/Turismo-e-negocio-serio.-Nao-tanto-no-Brasil-shutterstock_435627745.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 16rem 3rem;
+    /* Padding alto para telas grandes */
+}
+
+#hero h2 {
+    font-size: 80px;
+    /* Grande para desktop */
+    color: #fcb502;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+#hero button {
+    background: white;
+    color: #1390e9;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#hero button:hover {
+    background: #e8f0fa;
+}
+
+section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    font-size: 50px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* GRID DE CARDS */
+.grid {
+    display: grid;
+    /* O auto-fit e minmax já tornam o grid responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Removendo a largura fixa e deixando o grid controlar */
+    width: 100%;
+    max-width: 280px;
+    /* Mantém um limite de tamanho para telas muito grandes */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.card h3 {
+    color: #0077cc;
+    margin: 10px 0 5px;
+}
+
+.card p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #e8f0fa;
+    text-align: center;
+    padding: 10px;
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Botão principal */
+#abrirModal {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#abrirModal:hover {
+    background-color: #00b050;
+    transform: scale(1.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Fundo do modal */
+#meuModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa do modal */
+#meuModal>div {
+    background: linear-gradient(145deg, #007bff, #00b050);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    animation: aparecer 0.4s ease;
+    /* Adicionado para garantir rolagem em telas pequenas */
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+@keyframes aparecer {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Botão de fechar */
+#fecharModal {
+    color: #ffeb3b;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#fecharModal:hover {
+    transform: rotate(90deg);
+    color: #fff;
+}
+
+/* Campos do formulário */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 12px #ffeb3b;
+    transform: scale(1.02);
+}
+
+/* Botão Enviar */
+button[type="submit"] {
+    background-color: #ffeb3b;
+    color: #004d00;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(23, 138, 226);
+    transform: scale(1.07);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVO)    */
+/* ======================================= */
+
+/* Ajustes para dispositivos móveis (até 768px) */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        /* Empilha o título e a navegação */
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav {
+        margin-top: 0.5rem;
+    }
+
+    nav a {
+        margin: 0 8px;
+        /* Reduz espaço entre links */
+        font-size: 0.9rem;
+    }
+
+    /* HERO SECTION */
+    #hero {
+        /* Reduz o padding vertical drasticamente */
+        padding: 8rem 1rem;
+    }
+
+    #hero h2 {
+        font-size: 50px;
+        /* Reduz o tamanho da fonte */
+    }
+
+    /* SECTIONS */
+    h2 {
+        font-size: 35px;
+        /* Título das seções menores */
+    }
+
+    /* CARD (Móvel) */
+    /* O grid já faz o trabalho, mas garantimos que o card não exceda */
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    /* MODAL (Móvel) */
+    #meuModal>div {
+        width: 95%;
+        /* Ocupa mais espaço horizontalmente */
+        padding: 20px;
+        /* Reduz padding interno */
+        margin: 20px auto;
+    }
+
+    label {
+        font-size: 16px;
+    }
+}
+
+.fixed-return-btn {
+    position: fixed;
+    bottom: 20px;
+    /* 20px do rodapé */
+    right: 20px;
+    /* 20px da direita */
+    z-index: 90;
+    /* Abaixo dos botões do header, mas acima do conteúdo */
+
+    /* Estilo do botão */
+    background-color: #541385;
+    opacity: 0.5;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    /* Formato pill */
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.fixed-return-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    opacity: 0.9;
+}
+
+/* Responsividade: Ajuste a posição para telas menores */
+@media (max-width: 768px) {
+    .fixed-return-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-return-btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}

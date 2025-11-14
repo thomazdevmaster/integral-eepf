@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integral E.E. Prof. Fábregas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+  <header>
+    <div class="header-icons">
+      <img class="brasao" src="escola.png" alt="Brasão">
+      <img class="logo" src="logo.png" alt="Logo">
+    </div>
+
+    <div class="header-title">
+      <h1>Programação Web: 2º Ano Integral</h1>
+      <h2>Escola Estadual Professor Fábregas</h2>
+    </div>
+    
+    <div class="fixed-buttons">
+      <button id="btnSobre" class="btn-info">ℹ️ Sobre</button>
+      <button class="toggle-theme">🌞 Modo Claro</button>
+    </div>
+  </header>
+
+  <p class="boas-vindas">
+    Bem-vindos à página de Trabalhos Interdisciplinares de Programação Web e HTML/CSS!
+    Aqui, você terá a oportunidade de conhecer os projetos desenvolvidos pelos nossos alunos, que demonstram a
+    criatividade, habilidade técnica e dedicação desses jovens talentos.
+    Navegue pelo carrossel abaixo e explore os projetos:
+  </p>
+
+  <div class="carousel">
+    <button class="carousel-btn prev">❮</button>
+    <div class="carousel-track" id="track">
+      <div class="card active"
+        data-grupo="Grupo Filmes: Luiz Gabriel, Laene, Manoela, Pedro Henrique, Gabrielle e Eluiza">
+        <img src="https://deadline.com/wp-content/uploads/2023/08/billion-gallery.jpg" alt="Filmes">
+        <h2>Filmes</h2>
+        <p>Análises e curiosidades sobre o cinema.</p>
+        <a href="filmes/index.html">Acessar</a>
+      </div>
+
+      <div class="card" data-grupo="Grupo Turismo: João Pedro, Guilherme, Victor e Thiago">
+        <img src="https://falandodeturismo.com.br/wp-content/uploads/2021/05/Todo-Brasil-é-Turismo-Sem-o-turista-empregos-e-renda-deixam-de-existir.jpg" alt="Viagens e Turismo">
+        <h2>Turismo</h2>
+        <p>Destinos e pacotes turísticos incríveis.</p>
+        <a href="turismo/site.html">Acessar</a>
+      </div>
+
+      <div class="card" data-grupo="Grupo Esportes: Marcos, Gabriel, Lucas e Rafael">
+        <img src="https://img.freepik.com/fotos-gratis/ferramentas-desportivas_53876-138077.jpg?w=740" alt="Esportes">
+        <h2>Esportes</h2>
+        <p>Notícias e lives de futebol e vôlei.</p>
+        <a href="esportes/index.html">Acessar</a>
+      </div>
+
+      <div class="card" data-grupo="Grupo Estações do Ano: Ana, Beatriz e Clara">
+        <img src="https://conhecimentocientifico.r7.com/wp-content/uploads/2020/11/estacoes-do-ano-quais-sao-caracteristicas-e-datas-8.jpg" alt="Estações">
+        <h2>Estações</h2>
+        <p>Curiosidades sobre o clima e as estações.</p>
+        <a href="estacao/index.html">Acessar</a>
+      </div>
+
+      <div class="card" data-grupo="Grupo Curiosidades: Daniel, Felipe e Gustavo">
+        <img src="https://patiohype.com.br/wp-content/uploads/2023/11/curiosidades-aleatorias-1536x834.jpg" alt="Curiosidades">
+        <h2>Curiosidades</h2>
+        <p>Conteúdo dinâmico de fatos aleatórios.</p>
+        <a href="curiosidades/index.html">Acessar</a>
+      </div>
+    </div>
+    <button class="carousel-btn next">❯</button>
+  </div>
+
+  <div class="grupo-info" id="grupoInfo">Grupo 1 - João, Maria e Pedro</div>
+
+
+  <div class="explicacao-projeto">
+    <p>
+      Os trabalhos expostos são a conclusão de um projeto semestral. Mais do que exibir a funcionalidade dos sites,
+      eles demonstram a capacidade dos alunos de criar soluções personalizadas e funcionais.
+    </p>
+    <p>
+      Eles participaram de reuniões de equipe para ideação e planejamento, criaram protótipos, desenvolveram e testaram
+      as soluções, receberam feedback e fizeram ajustes. Essa abordagem prática permitiu que os alunos colocassem em
+      prática os conceitos teóricos e desenvolvessem habilidades essenciais para o mercado de trabalho.
+    </p>
+  </div>
+
+
+  <div id="modalSobre" class="modal-bg">
+    <div class="modal-content">
+      <span id="fecharSobre" class="close-btn">&times;</span>
+      <h3>✨ Sobre o Projeto dos Alunos</h3>
+
+      <img src="turma.jpg" alt="Imagem da Turma" class="modal-img">
+
+      <p>
+        Este portal é o resultado do trabalho e aprendizado dos alunos do Ensino Médio Técnico em Informática da E.E.
+        Prof. Fábregas. O objetivo principal foi aplicar na prática conceitos de <strong>HTML, CSS e
+          JavaScript</strong>, desde o design responsivo (como esta página que você está vendo!) até a manipulação
+        dinâmica de elementos (como o carrossel 3D e o seletor de tema).
+      </p>
+
+      <img src="turma2.jpeg" alt="Imagem da Turma" class="modal-img">
+    </div>
+  </div>
+
+  <footer>
+    <div class="desc">
+      © 2025 - Escola Estadual Professor Fábregas
+      <p>Desenvolvido pelos alunos do <span class="turma">2º Integral</span></p>
+      <p class="prof">Professores: Karina & Thomaz</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>

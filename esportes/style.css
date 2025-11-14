@@ -1,0 +1,388 @@
+ /* ==================== ESTILOS ORIGINAIS ==================== */
+ body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+     background-color: #7b9aa8;
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+ }
+
+
+ p {
+     color: #16324f;
+     font-family: Cambria sans-serif;
+     margin: 0;
+     background-color: #a7c6e7;
+     font-size: 20px;
+     text-align: center;
+     text-align: justify;
+ }
+
+ /* H1 e H2 globais com fundo azul (usados em seções) */
+ h1 {
+     color: #4b8ac4;
+     background-color: #124588;
+     text-align: center;
+     margin: 0;
+     font-family: Calibri sans-serif;
+ }
+
+ h2 {
+     color: #ffffff;
+     text-align: center;
+     margin: 0;
+     font-family: Calibri sans-serif;
+     background-color: #124588;
+ }
+
+ li {
+     font-family: Gill Sans sans-serif;
+     color: #4b8ac4;
+     font-size: 30px;
+ }
+
+
+ /* HEADER E CADASTRO */
+ header {
+     background-color: #1e3d59;
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 30px;
+     position: relative;
+ }
+
+
+ .cadastro-area {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+ }
+
+
+ .cadastro-area input {
+     padding: 8px;
+     border-radius: 5px;
+     border: none;
+     outline: none;
+ }
+
+
+ .cadastro-area button {
+     background-color: #ffcc00;
+     color: #1e3d59;
+     border: none;
+     padding: 8px 14px;
+     border-radius: 5px;
+     font-weight: bold;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+
+ .cadastro-area button:hover {
+     background-color: #ffd633;
+ }
+
+
+ header h1 {
+     /* Sobreescreve o H1 global para o cabeçalho */
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     margin: 0;
+     font-size: 24px;
+     color: white;
+     background-color: transparent;
+     font-family: Arial, sans-serif;
+ }
+
+
+ /* LAYOUT PRINCIPAL (NAV + MAIN) */
+ .container {
+     display: flex;
+     flex: 1;
+ }
+
+
+ nav {
+     background-color: #16324f;
+     width: 300px;
+     /* Largura fixa para desktop */
+     display: flex;
+     flex-direction: column;
+     padding-top: 20px;
+ }
+
+
+ nav a {
+     color: white;
+     padding: 15px 20px;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: bold;
+     border-left: 5px solid transparent;
+     transition: all 0.3s ease;
+ }
+
+
+ nav a:hover {
+     background-color: #3a506b;
+     border-left: 5px solid #ffcc00;
+ }
+
+
+ main {
+     flex: 1;
+     padding: 30px;
+     background-color: white;
+     overflow-y: auto;
+ }
+
+ /* RESPONSIVIDADE UNIVERSAL PARA IMAGENS NO CONTEÚDO */
+ main img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+     /* Remove espaço extra abaixo das imagens */
+     margin: 15px auto;
+     /* Centraliza a imagem */
+ }
+
+
+ section {
+     display: none;
+ }
+
+
+ section.active {
+     display: block;
+     animation: fadeIn 0.4s ease;
+ }
+
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+
+ footer {
+     text-align: center;
+     padding: 10px;
+     background-color: #1e3d59;
+     color: white;
+     flex-shrink: 0;
+     /* Impede que o footer encolha */
+ }
+
+
+ /* Blocos clicáveis da aba Ao Vivo */
+ .live-sections {
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+     margin-top: 30px;
+ }
+
+
+ .live-card {
+     background-color: #1e3d59;
+     color: white;
+     border-radius: 12px;
+     padding: 40px;
+     text-align: center;
+     font-size: 28px;
+     font-weight: bold;
+     cursor: pointer;
+     transition: transform 0.3s, background-color 0.3s;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ }
+
+
+ .live-card:hover {
+     background-color: #ffcc00;
+     color: #1e3d59;
+     transform: scale(1.03);
+ }
+
+
+ .live-card span {
+     display: block;
+     font-size: 18px;
+     margin-top: 8px;
+     font-weight: normal;
+ }
+
+ /* Estilos da seção eSports (melhores jogadores) */
+ #esports .container {
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+
+ #esports figure {
+     margin: 10px;
+     flex: 1 1 250px;
+     /* Permite que o elemento cresça e tenha uma base de 250px */
+     max-width: 300px;
+ }
+
+
+ /* ======================================= */
+ /* MEDIA QUERIES (RESPONSIVO)    */
+ /* ======================================= */
+
+ /* Telas Médias e Pequenas (até 768px) */
+ @media (max-width: 768px) {
+
+     /* HEADER */
+     header {
+         flex-direction: column;
+         /* Empilha itens */
+         align-items: center;
+         padding: 15px 15px;
+         gap: 10px;
+     }
+
+     header h1 {
+         /* Remove o posicionamento absoluto */
+         position: static;
+         transform: none;
+         text-align: center;
+         width: 100%;
+         font-size: 20px;
+     }
+
+     .cadastro-area {
+         width: 100%;
+         justify-content: space-between;
+     }
+
+     /* LAYOUT PRINCIPAL (NAV + MAIN) */
+     .container {
+         flex-direction: column;
+         /* Navegação e Conteúdo se empilham */
+     }
+
+     /* NAVEGAÇÃO */
+     nav {
+         width: 100%;
+         /* Ocupa a largura total */
+         flex-direction: row;
+         /* Links em linha */
+         flex-wrap: wrap;
+         /* Quebra links para a próxima linha, se necessário */
+         padding-top: 0;
+         justify-content: center;
+     }
+
+     nav a {
+         padding: 10px 10px;
+         flex: 1 1 auto;
+         /* Permite que os links dividam o espaço */
+         text-align: center;
+         border-left: none;
+         /* Remove a barra lateral */
+         border-bottom: 3px solid transparent;
+         /* Usa a borda inferior para hover */
+     }
+
+     nav a:hover {
+         border-left: none;
+         border-bottom: 3px solid #ffcc00;
+     }
+
+     /* CONTEÚDO PRINCIPAL */
+     main {
+         padding: 20px 15px;
+     }
+
+     /* H1, H2 e LI menores para telas menores */
+     h1 {
+         font-size: 20px;
+     }
+
+     h2 {
+         font-size: 18px;
+     }
+
+     li {
+         font-size: 20px;
+     }
+
+     /* eSports Section - Stacks figures (Melhores Jogadores) */
+     #esports .container {
+         flex-direction: column;
+         /* Empilha as figuras */
+         align-items: center;
+         gap: 30px;
+     }
+
+     #esports figure {
+         width: 90%;
+         max-width: 400px;
+     }
+
+     /* Live Cards (Ao Vivo) */
+     .live-card {
+         font-size: 22px;
+         padding: 25px;
+     }
+ }
+
+ .fixed-return-btn {
+     position: fixed;
+     bottom: 20px;
+     /* 20px do rodapé */
+     right: 20px;
+     /* 20px da direita */
+     z-index: 90;
+     /* Abaixo dos botões do header, mas acima do conteúdo */
+
+     /* Estilo do botão */
+     background-color: #541385;
+     opacity: 0.5;
+     color: #fff;
+     text-decoration: none;
+     padding: 12px 20px;
+     border-radius: 50px;
+     /* Formato pill */
+     font-weight: 600;
+     font-size: 1rem;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+     transition: all 0.3s ease;
+     white-space: nowrap;
+ }
+
+ .fixed-return-btn:hover {
+     transform: translateY(-3px) scale(1.02);
+     opacity: 0.9;
+ }
+
+ /* Responsividade: Ajuste a posição para telas menores */
+ @media (max-width: 768px) {
+     .fixed-return-btn {
+         bottom: 15px;
+         right: 15px;
+         padding: 10px 18px;
+         font-size: 0.9rem;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .fixed-return-btn {
+         bottom: 10px;
+         right: 10px;
+         padding: 8px 15px;
+         font-size: 0.85rem;
+     }
+ }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>CineInt</h1>
+        <input type="text" id="pesquisa" placeholder="Pesquisar filmes..." onkeyup="buscarFilme()">
+        <button>Cadastre-se</button>
+        <button>Entrar</button>
+    </header>
+
+    <div id="lista-filmes">
+    </div>
+
+    <div id="filme-modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+
+            <h2 id="modal-title">Título do Filme</h2>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Capa do Filme">
+                <div class="modal-info">
+                    <p id="modal-resumo">Resumo do filme...</p>
+                    <a id="modal-link" href="#" target="_blank" class="modal-btn">Ver Página Completa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="../" class="fixed-return-btn">
+      🏠 Voltar à Home
+    </a>
+</body>
+
+</html>
