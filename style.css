@@ -96,7 +96,7 @@ header img:hover {
 
 /* NOVO: Estilo para a mensagem de Boas-Vindas */
 .boas-vindas {
-    max-width: 900px;
+    max-width: 90%;
     padding: 20px 30px; /* Mais padding */
     margin: 20px auto 40px; /* Centraliza e aumenta margem inferior */
     text-align: left; /* Alinhamento à esquerda para melhor leitura */
@@ -287,7 +287,7 @@ header img:hover {
 
 /* NOVO: Texto de Explicação do Projeto */
 .explicacao-projeto {
-    max-width: 900px;
+    max-width: 90%;
     padding: 0 20px;
     margin: 50px auto 50px; /* Centraliza */
     text-align: justify;
