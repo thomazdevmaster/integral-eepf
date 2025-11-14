@@ -1,348 +1,275 @@
-/* Fonte divertida */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* Corpo da página */
+
 body {
-    font-family: 'Baloo 2', cursive;
-    background: linear-gradient(135deg, #007bff, #1a99e9, #ffeb3b);
-    background-size: 400% 400%;
-    animation: fundoAnimado 10s ease infinite;
-    margin: 0;
-    color: #043927;
-    text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(135deg, #0d324d, #1fa2ff, #12d8fa); /* degradê mais escuro */
+  min-height: 100vh;
 }
 
-@keyframes fundoAnimado {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 /* HEADER */
 header {
-    background-color: #0077cc;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  background-color: rgba(0, 95, 153, 0.9);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  backdrop-filter: blur(10px);
 }
-
-header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-header span {
-    color: #00ffff;
-}
-
+header h1 { margin: 0; font-size: 1.8rem; font-weight: 700; }
+header span { color: #ffd700; }
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: 0.3s;
 }
+nav a:hover { color: #ffd700; }
 
-nav a:hover {
-    text-decoration: underline;
-}
 
-/* HERO SECTION */
+/* HERO */
 #hero {
-    background-image: url("https://mercadoeconsumo.com.br/wp-content/uploads/2023/02/Turismo-e-negocio-serio.-Nao-tanto-no-Brasil-shutterstock_435627745.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 16rem 3rem;
-    /* Padding alto para telas grandes */
+  padding: 12rem 2rem;
+  color: white;
+  background: url('https://mercadoeconsumo.com.br/wp-content/uploads/2023/02/Turismo-e-negocio-serio.-Nao-tanto-no-Brasil-shutterstock_435627745.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
-
 #hero h2 {
-    font-size: 80px;
-    /* Grande para desktop */
-    color: #fcb502;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
-
 #hero button {
-    background: white;
-    color: #1390e9;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 22px;
+  border-radius: 30px;
+  border: none;
+  background: #ffd700;
+  color: #005f99;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
 }
-
 #hero button:hover {
-    background: #e8f0fa;
+  transform: scale(1.05);
+  background: #ffea00;
 }
 
-section {
-    padding: 2rem 1rem;
-    text-align: center;
-}
 
-h2 {
-    color: #fff;
-    font-size: 50px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-/* GRID DE CARDS */
+/* GRID E CARDS */
 .grid {
-    display: grid;
-    /* O auto-fit e minmax já tornam o grid responsivo */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 2rem;
+  justify-items: center;
 }
+
 
 .card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Removendo a largura fixa e deixando o grid controlar */
-    width: 100%;
-    max-width: 280px;
-    /* Mantém um limite de tamanho para telas muito grandes */
-    overflow: hidden;
-    transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  width: 280px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
-
 .card:hover {
-    transform: scale(1.05);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-
 .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
-
 .card h3 {
-    color: #0077cc;
-    margin: 10px 0 5px;
+  font-size: 1.7rem;
+  color: #005f99;
+  margin: 12px 0 6px 0;
+  font-weight: 700;
 }
-
 .card p {
-    color: #333;
-    margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin: 4px 0;
+  color: #333;
+}
+.card p strong {
+  font-size: 1.4rem;
+  color: #0077cc;
+}
+.card button {
+  margin: 10px 0 15px 0;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #0077cc;
+  background: #fff;
+  color: #0077cc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card button:hover {
+  background: #0077cc;
+  color: #fff;
+  transform: scale(1.05);
 }
 
+
+/* MODAL DE INFORMAÇÕES */
+#infoModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#infoContent {
+  background: #ffffff;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  animation: fadeIn 0.3s ease;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+#infoContent img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+#infoTitle {
+  font-size: 2rem;
+  color: #005f99;
+  margin-bottom: 10px;
+}
+#infoTipo, #infoPreco, #infoDescricao {
+  font-size: 1.2rem;
+  margin: 6px 0;
+  color: #333;
+}
+#closeInfo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #cc0000;
+  transition: transform 0.3s ease;
+}
+#closeInfo:hover {
+  transform: rotate(360deg);
+}
+
+
+/* MODAL CADASTRO */
+#modalCadastro {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 3000;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.cadastroBox {
+  background: #1739d1;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+#modalCadastro h2 {
+  color: #ffbb00;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+#modalCadastro label {
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+#modalCadastro input {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ffd24d;
+  transition: 0.3s;
+}
+#modalCadastro input:focus {
+  outline: none;
+  border-color: #ffbb00;
+  box-shadow: 0 0 8px #ffea00;
+}
+#modalCadastro button {
+  width: 100%;
+  padding: 14px;
+  background: #ffbb00;
+  color: #005f99;
+  border-radius: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: 0.3s;
+}
+#modalCadastro button:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+#fecharCadastro {
+  float: right;
+  cursor: pointer;
+  font-size: 25px;
+  color: #cc0000;
+  transition: transform 0.3s ease;
+}
+#fecharCadastro:hover {
+  transform: rotate(360deg);
+}
+
+
+/* FOOTER */
 footer {
-    background-color: #e8f0fa;
-    text-align: center;
-    padding: 10px;
-    color: #555;
-    font-size: 0.9rem;
-    margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  margin-top: 3rem;
+  color: #333;
+  font-size: 14px;
 }
 
-/* Botão principal */
-#abrirModal {
-    background-color: #007bff;
-    color: white;
-    padding: 14px 28px;
-    font-size: 18px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
 
-#abrirModal:hover {
-    background-color: #00b050;
-    transform: scale(1.08);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
-}
-
-/* Fundo do modal */
-#meuModal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    justify-content: center;
-    align-items: center;
-}
-
-/* Caixa do modal */
-#meuModal>div {
-    background: linear-gradient(145deg, #007bff, #00b050);
-    color: white;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 420px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    animation: aparecer 0.4s ease;
-    /* Adicionado para garantir rolagem em telas pequenas */
-    max-height: 90vh;
-    overflow-y: auto;
-    box-sizing: border-box;
-}
-
-@keyframes aparecer {
-    from {
-        transform: translateY(-40px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Botão de fechar */
-#fecharModal {
-    color: #ffeb3b;
-    font-weight: bold;
-    float: right;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#fecharModal:hover {
-    transform: rotate(90deg);
-    color: #fff;
-}
-
-/* Campos do formulário */
-form {
-    text-align: left;
-    margin-top: 20px;
-}
-
-label {
-    font-size: 18px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    box-shadow: 0 0 12px #ffeb3b;
-    transform: scale(1.02);
-}
-
-/* Botão Enviar */
-button[type="submit"] {
-    background-color: #ffeb3b;
-    color: #004d00;
-    font-weight: bold;
-    padding: 12px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    width: 100%;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-button[type="submit"]:hover {
-    background-color: rgb(23, 138, 226);
-    transform: scale(1.07);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* ======================================= */
-/* MEDIA QUERIES (RESPONSIVO)    */
-/* ======================================= */
-
-/* Ajustes para dispositivos móveis (até 768px) */
-@media (max-width: 768px) {
-
-    /* HEADER */
-    header {
-        flex-direction: column;
-        /* Empilha o título e a navegação */
-        align-items: center;
-        gap: 10px;
-    }
-
-    nav {
-        margin-top: 0.5rem;
-    }
-
-    nav a {
-        margin: 0 8px;
-        /* Reduz espaço entre links */
-        font-size: 0.9rem;
-    }
-
-    /* HERO SECTION */
-    #hero {
-        /* Reduz o padding vertical drasticamente */
-        padding: 8rem 1rem;
-    }
-
-    #hero h2 {
-        font-size: 50px;
-        /* Reduz o tamanho da fonte */
-    }
-
-    /* SECTIONS */
-    h2 {
-        font-size: 35px;
-        /* Título das seções menores */
-    }
-
-    /* CARD (Móvel) */
-    /* O grid já faz o trabalho, mas garantimos que o card não exceda */
-    .card {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    /* MODAL (Móvel) */
-    #meuModal>div {
-        width: 95%;
-        /* Ocupa mais espaço horizontalmente */
-        padding: 20px;
-        /* Reduz padding interno */
-        margin: 20px auto;
-    }
-
-    label {
-        font-size: 16px;
-    }
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(-10px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 .fixed-return-btn {
@@ -371,7 +298,7 @@ button[type="submit"]:hover {
 
 .fixed-return-btn:hover {
     transform: translateY(-3px) scale(1.02);
-    opacity: 0.9;
+    opacity: 1;
 }
 
 /* Responsividade: Ajuste a posição para telas menores */
