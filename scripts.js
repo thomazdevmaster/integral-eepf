@@ -105,31 +105,3 @@ btnTheme.addEventListener('click', () => {
         btnTheme.innerHTML = '🌞 Modo Claro';
     }
 });
-
-// =======================================
-// CONTROLE DO MODAL SOBRE
-// =======================================
-const modalSobre = document.getElementById('modalSobre');
-const btnSobre = document.getElementById('btnSobre');
-const fecharSobre = document.getElementById('fecharSobre');
-
-// Abre o modal
-btnSobre.addEventListener('click', () => {
-    modalSobre.style.display = 'flex';
-});
-
-// Fecha o modal pelo botão 'X'
-fecharSobre.addEventListener('click', () => {
-    modalSobre.style.display = 'none';
-});
-
-// Fecha o modal clicando fora dele
-window.addEventListener('click', (event) => {
-    if (event.target === modalSobre) {
-        modalSobre.style.display = 'none';
-    }
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    modalSobre.style.display = 'none';
-});
